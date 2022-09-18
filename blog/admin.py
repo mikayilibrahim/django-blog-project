@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import KateqoriyaModel,YaziModels
+from blog.models import KateqoriyaModel,YaziModels,YorumModel
 
 admin.site.register(KateqoriyaModel)
 
@@ -14,3 +14,13 @@ class YazilarAdmin(admin.ModelAdmin):
         )
 
 admin.site.register(YaziModels,YazilarAdmin)
+
+
+class YorumAdmin(admin.ModelAdmin):
+    list_display = ('yazan','yaradilma_tarixi')
+    
+admin.site.register(YorumModel,YorumAdmin)
+
+
+
+
