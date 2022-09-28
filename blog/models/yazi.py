@@ -13,7 +13,7 @@ class YaziModels(models.Model):
     deyisdirilme_tarixi = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from= "basliq",unique=True)
     kateqoriyalar = models.ManyToManyField(KateqoriyaModel ,related_name="yazi")
-    yazar = models.ForeignKey(User, on_delete= models.CASCADE, related_name="yazilar")
+    yazar = models.ForeignKey("account.CustomUserModel", on_delete= models.CASCADE, related_name="yazilar")
 
     class Meta:
         verbose_name = "Yazi"
